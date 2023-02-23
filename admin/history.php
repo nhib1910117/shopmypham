@@ -31,7 +31,7 @@
                             <td><?php echo $row_select_order["user_name"] ?></td>
                             <td><?php echo $row_select_order["user_adress"] ?></td>
                             <td><?php echo $row_select_order["user_phone"] ?></td>
-                            <td><?php echo $row_select_order["order_create_date"] ?></td>
+                            <td><?php echo $row_select_order["order_date_create"] ?></td>
                             <td>
                                 <button class="btn btn--primary" style="background-color: #dadadd;"><a href="index.php?page=detail_order&order_id=<?php echo $row_select_order["order_id"] ?>">Xem chi tiết</a></button>
                             </td>

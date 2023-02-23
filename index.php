@@ -5,6 +5,14 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+    <style>
+        .footer__item-icon:nth-child(1){
+    background-color: #fff !important;
+}
+.footer__item-icon:nth-child(3) a{
+    color: #fff !important;
+}
+    </style>
 
 <?php
 include "./header.php";
@@ -83,6 +91,33 @@ include "./header.php";
     <script src="./javascript.js"></script>
     <script src="./bootstrap/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // $('.update_quantity').blur(function(){
+        //     const pro_id = $(this).attr('id');
+        //     const quantity = $(this).val();
+        //     $.get({
+        //         url:"update_cart.php",
+        //         data: {pro_id:pro_id,quantity:quantity},
+        //         success: function(data){
+        //             location.reload();
+        //         }
+        //     })
+        // });
+
+        $(document).ready(function(){
+            $('.update_cart').blur(function(){
+                const quantity = $(this).val();
+                const id_cart = $(this).attr('id');
+                $.get({
+                url:"./update_cart.php",
+                data: {id_cart:id_cart,quantity:quantity},
+                success: function(data){
+                    location.reload();
+                }
+            });
+            });
+        });
+    </script>
 </body>
 
 </html>

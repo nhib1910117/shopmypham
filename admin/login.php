@@ -38,6 +38,7 @@ if (isset($_SESSION["login"])) {
         <a class="hiddenanchor" id="signin"></a>
         <?php
         if (isset($_POST["btnLogin"])) {
+            
             $ad_name = $_POST["ad_name"];
             $ad_password = trim($_POST["ad_password"]);
             $sql_select_admin = "select * from admin where ad_name = '$ad_name' and ad_password = '$ad_password'";

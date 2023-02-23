@@ -72,7 +72,7 @@ if (!isset($_SESSION["login"])) {
       </div>
 
       <!-- top navigation -->
-      <?php
+      <?php 
       include "./top_nav.php";
       ?>
       <!-- /top navigation -->

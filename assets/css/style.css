@@ -177,7 +177,7 @@ html{
     width: 100%;
     margin-left: 4px;
     margin-right: 4px;
-    
+    height: 600px ;
 }
 
 
@@ -376,7 +376,7 @@ footer{
 }
 
 .footer__item-icon{
-    background-color: red;
+    /* background-color: red; */
     margin-right: 10px;
     padding: 6px;
     text-align: center;
@@ -392,7 +392,7 @@ footer{
 }
 
 .footer__item-icon:nth-child(1){
-    background-color: #1877F2;
+    background-color: #fff !important;
 }
 
 .footer__item-icon:nth-child(2){
@@ -775,3 +775,5 @@ footer{
     background-color: #4aa2bb;
     margin-left: 33px;
 }
+
+

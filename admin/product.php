@@ -9,7 +9,8 @@
         </div>
         <div class="x_content">
             <?php
-            if (isset($_GET["id"])) {
+            if (isset($_GET['delete']) && isset($_GET["id"])) {
+               
                 $pro_id = $_GET["id"];
                 $sql = "delete from tbl_product where pro_id = '$pro_id' ";
                 mysqli_query($conn, $sql) or die("Loi cau lenh xoa pro");
@@ -42,10 +43,11 @@
                             <tr>
                                 <th scope="row"><?php echo $i ?></th>
                                 <td>
-                                    <a href="./index.php?page=product&id=<?php echo $row["pro_id"]  ?>" onclick="return confirm('Bạn chắc chắn xóa danh mục này?')">Xóa</a>
+                                    <a href="./index.php?page=product&delete=1&id=<?php echo $row["pro_id"]  ?>" onclick="return confirm('Bạn chắc chắn xóa danh mục này?')">Xóa</a>
+                                    <a href="./index.php?page=add_product&edit=1&id=<?php echo $row["pro_id"]  ?>">Sửa</a>
                                 </td>
                                 <td><?php echo $row["pro_name"] ?></td>
-                                <td><?php echo $row["pro_price"] ?></td>
+                                <td><?php echo number_format($row["pro_price"]) ?>đ</td>
                                 <td>
                                     <?php
 
@@ -56,7 +58,7 @@
                                     echo $row_select["size_name"];
                                     ?>
                                 </td>
-                                <td><?php echo $row["image"] ?></td>
+                                <td><img width="50" height="50" style="object-fit:cover;" src="../uploads/<?php echo $row["image"] ?>"></td>
                                 <td>
                                     <?php
                                     $cat_id = $row["cat_id"];

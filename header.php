@@ -9,4 +9,11 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="shortcut icon" href="./assets/img/images.png" type="image/x-icon" sizes="16x16">
     <title>The Body Shop</title>
+    <style>
+
+.custom-cart{
+    height: 120px;
+    background: #fff !important;
+}
+    </style>
 </head>

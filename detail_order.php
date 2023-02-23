@@ -31,7 +31,7 @@
                             <tr>
                                 <th scope="row"><?php echo $i ?></th>
 
-                                <td style="width: 20px;"><img src="<?php echo $row["image"] ?>" class="img-fluid rounded-3" alt="Cotton T-shirt"></td>
+                                <td style="width: 20px;"><img src="./uploads/<?php echo $row["image"] ?>" class="img-fluid rounded-3" alt=""></td>
                                 <td><?php echo $row["pro_name"] ?></td>
                                 <td><?php echo $row["pro_price"] ?>đ</td>
                                 <td><?php echo $row["quantity"] ?></td>

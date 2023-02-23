@@ -20,7 +20,7 @@ if (!$_SESSION["user"]) {
                                     if (isset($_POST["addOrder"])) {
                                         $user_id = $_SESSION["user"]["user_id"];
                                         $user_name =  $_POST["user_name"];
-                                        $user_adress = $_POST["user_adress"];
+                                        $user_adress = $_POST["user_address"];
                                         $user_phone = $_POST["user_phone"];
                                         $order_status = 1;
                                         $order_date_create = date("Y-m-d H:i:s");
@@ -57,8 +57,7 @@ if (!$_SESSION["user"]) {
                                     <form method="POST" class="form__dangnhap bg-black">
                                         <input class="input__common" type="text" id="user_name" value="<?php echo $_SESSION["user"]["user_name"] ?>" name="user_name" placeholder="Họ và tên"><br>
                                         <input class="input__common" type="text" id="user_phone" value="<?php echo $_SESSION["user"]["user_phone"] ?>" name="user_phone" placeholder="Số điện thoại"><br>
-                                        <input class="input__common" type="text" id="user_adress" value="<?php echo $_SESSION["user"]["user_adress"] ?>" name="user_adress" placeholder="Địa chỉ"><br>
-
+                                        <input class="input__common" type="text" id="user_adress" value="<?php echo isset($_SESSION["user"]["user_address"])?$_SESSION["user"]["user_address"]:"" ?>" name="user_address" placeholder="Địa chỉ"><br>
                                         <div class="button__cover">
                                             <button class="form__button" type="submit" name="addOrder">Đặt hàng</button>
                                         </div>
@@ -103,17 +102,17 @@ if (!$_SESSION["user"]) {
                                             <hr class="my-4">
                                             <div class="d-flex justify-content-between mb-5">
                                                 <div class="col-md-2 col-lg-2 col-xl-2">
-                                                    <img src="<?php echo $value["image"] ?>" class="img-fluid rounded-3" alt="Cotton T-shirt">
+                                                    <img src="./uploads/<?php echo $value["image"] ?>" class="img-fluid rounded-3" alt="Cotton T-shirt">
                                                 </div>
                                                 <div class="col-md-2 col-lg-2 col-xl-2">
                                                     <h6 style="display: block; width: 70px;"><?php echo $value["quatity"] ?></h6>
                                                 </div>
 
                                                 <div class="col-md-2 col-lg-2 col-xl-2">
-                                                    <h6 style="display: block; width: 70px;"><?php echo $value["pro_price"] ?><u>đ</u></h6>
+                                                    <h6 style="display: block; width: 70px;"><?php echo $value["pro_price"] ?>đ</h6>
                                                 </div>
                                                 <div class="col-md-2 col-lg-2 col-xl-2">
-                                                    <h6 style="display: block; width: 70px;"><?php echo $sum_detail ?><u>đ</u></h6>
+                                                    <h6 style="display: block; width: 70px;"><?php echo $sum_detail ?>đ</h6>
                                                 </div>
                                             </div>
                                     <?php }
@@ -127,7 +126,7 @@ if (!$_SESSION["user"]) {
                                             if (isset($_SESSION['cart'])) {
                                                 echo $total;
                                             }
-                                            ?><u>đ</u></h5>
+                                            ?>đ</h5>
                                     </div>
 
                                 </div>

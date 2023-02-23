@@ -10,7 +10,7 @@ if ($_GET["id"]) {
                     <div class="row">
                         <div class="grid__1-9-item">
                             <div class="main_im-product">
-                                <img class="full-widtd" id="main_img" src="<?php echo $row_select_detailt["image"] ?>" style=" margin-bottom: 94px;" alt="">
+                                <img class="full-widtd" id="main_img" src="./uploads/<?php echo $row_select_detailt["image"] ?>" style=" margin-bottom: 94px;" alt="">
                             </div>
                         </div>
                         <div class="grid__1-9">
@@ -24,10 +24,19 @@ if ($_GET["id"]) {
 
                 </div>
             </div>
+            <?php
+                $size_id = $row_select_detailt['size_id'];
+                $query_select_size_id = "select * from tbl_size where size_id = '$size_id'";
+                // echo $query_select_size_id;
+                // die();
+                $result_select_size_id = mysqli_query($conn,$query_select_size_id);
+                $row_select_size_id = mysqli_fetch_assoc($result_select_size_id);
+
+            ?>
             <div class="col-md-7 col-sm-12 col-12">
                 <h1 class="grid_4-6-item-name"><?php echo $row_select_detailt["pro_name"] ?></h2>
-                    <p class="font16"><span class="font_strong">Thương hiệu:</span> khác | <span class="font_strong">Loại:</span> Còn hàng</p>
-                    <p class="font16 margin20 text-bold" style="color: red"> <?php echo $row_select_detailt["pro_price"] ?> <u>đ</u> <strike style="color: rgb(160, 154, 154)">350.000 <u>đ</u></strike> </p>
+                    <p class="font16"><span class="font_strong">Thương hiệu:</span> <?php echo $row_select_size_id['size_name'] ?> | <span class="font_strong">Loại:</span> Còn hàng</p>
+                    <p class="font16 margin20 text-bold" style="color: red"> <?php echo number_format($row_select_detailt["pro_price"]) ?> đ</p>
 
 
                     <div class="row ">

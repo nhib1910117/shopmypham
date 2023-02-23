@@ -12,8 +12,8 @@
 
                                     </div>
 
-                                    <hr class="my-4">
-                                    <div class="row mb-4 d-flex justify-content-between align-items-center">
+                                    <hr>
+                                    <div style="height: 20px;" class="row my-0">
                                         <div class="col-md-2 col-lg-2 col-xl-2">
                                             <h6>Ảnh</h6>
                                         </div>
@@ -42,26 +42,26 @@
                                     ?>
 
 
-                                            <hr class="my-4">
-                                            <div class="row mb-4 d-flex justify-content-between align-items-center">
+                                            <hr>
+                                            <div class="row custom-cart">
                                                 <div class="col-md-2 col-lg-2 col-xl-2">
-                                                    <img src="<?php echo $value["image"] ?>" class="img-fluid rounded-3" alt="Cotton T-shirt">
+                                                    <img src="./uploads/<?php echo $value["image"] ?>" class="img-fluid rounded-3" alt="Cotton T-shirt">
                                                 </div>
                                                 <div class="col-md-3 col-lg-3 col-xl-3">
                                                     <h6 class="text-black"><?php echo $value["pro_name"] ?></h6>
 
                                                 </div>
-                                                <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                                                <div class="col-md-3 col-lg-3 col-xl-2">
 
-                                                    <input id="form1" min="0" name="quantity" value="<?php echo $value["quatity"] ?>" type="text" class="form-control form-control-sm" />
+                                                    <input id="<?php echo $key ?>" min="0" name="quantity" value="<?php echo $value["quatity"] ?>" type="text" class="form-control update_cart update_quantity update_quantity<?php echo $key ?> form-control-sm" />
 
 
                                                 </div>
                                                 <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                                    <h6 class="mb-0"><?php echo $value["pro_price"] ?><u>đ</u></h6>
+                                                    <h6 class="mb-0"><?php echo number_format($value["pro_price"]) ?><u>đ</u></h6>
                                                 </div>
                                                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                                    <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
+                                                    <a href="./delete_cart.php?id=<?php echo $key ?>" class="text-muted"><i class="fas fa-times"></i></a>
                                                 </div>
                                             </div>
                                     <?php       }
@@ -70,14 +70,14 @@
 
 
 
-                                    <hr class="my-4">
+                                    <hr>
 
                                     <div class="pt-5">
                                         <h6 class="mb-0"><a href="./index.php" class="text-body"><i class="fas fa-long-arrow-alt-left me-2"></i>Trở về trang chủ</a></h6>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-5 bg-grey">
+                            <div class="col-lg-4 bg-grey">
                                 <div class="p-5">
                                     <a class="fw-bold mb-5 mt-2 pt-1" href="./index.php?page=history">Lịch sử mua hàng</a>
                                     <h3 class="fw-bold mb-5 mt-2 pt-1">Tổng tiền</h3>
@@ -103,11 +103,14 @@
 
                                     ?>
                                             <div class="d-flex justify-content-between mb-5">
-                                                <h6 class="" style="display: block; width: 120px;"><?php echo $value["pro_name"] ?></h6>
+                                               
+                                                <div class="col-md-2 col-lg-2 col-xl-2">
+                                                    <img src="./uploads/<?php echo $value["image"] ?>" class="img-fluid rounded-3" alt="Cotton T-shirt">
+                                                </div>
                                                 <h6 style="display: block; width: 70px;"><?php echo $value["quatity"] ?></h6>
                                                 <span style="margin-right: 20px;">x</span>
-                                                <h6 style="display: block; width: 70px;"><?php echo $value["pro_price"] ?><u>đ</u></h6>
-                                                <h6 style="display: block; width: 70px;"><?php echo $sum_detail ?><u>đ</u></h6>
+                                                <h6 style="display: block; width: 70px;"><?php echo number_format($value["pro_price"]) ?> đ</h6>
+                                                <h6 style="display: block; width: 70px;"><?php echo number_format($sum_detail) ?> đ</h6>
                                             </div>
                                     <?php }
                                     } ?>
